@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30524.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manager", "Manager\Manager.csproj", "{A36D66DB-B627-428A-84EE-767B04518F2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skds", "Skds", "{E0635F4C-74B1-4BE3-9E09-4CEEBE2464F3}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PluginSdk", "Sdks\PluginSdk\PluginSdk.shproj", "{3E2357C6-A433-430C-B485-DAB8FA445040}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GameSdk", "Sdks\GameSdk\GameSdk.shproj", "{4E7223C3-DC5C-46A8-851D-469A169B3049}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Core", "Core\Core.shproj", "{44961E9D-B258-49A7-88F0-9285435D9DCB}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Sdks\PluginSdk\PluginSdk.projitems*{3e2357c6-a433-430c-b485-dab8fa445040}*SharedItemsImports = 13
+		Core\Core.projitems*{44961e9d-b258-49a7-88f0-9285435d9dcb}*SharedItemsImports = 13
+		Sdks\GameSdk\GameSdk.projitems*{4e7223c3-dc5c-46a8-851d-469a169b3049}*SharedItemsImports = 13
+		Core\Core.projitems*{a36d66db-b627-428a-84ee-767b04518f2e}*SharedItemsImports = 5
+		Sdks\GameSdk\GameSdk.projitems*{a36d66db-b627-428a-84ee-767b04518f2e}*SharedItemsImports = 5
+		Sdks\PluginSdk\PluginSdk.projitems*{a36d66db-b627-428a-84ee-767b04518f2e}*SharedItemsImports = 5
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A36D66DB-B627-428A-84EE-767B04518F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36D66DB-B627-428A-84EE-767B04518F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36D66DB-B627-428A-84EE-767B04518F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36D66DB-B627-428A-84EE-767B04518F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3E2357C6-A433-430C-B485-DAB8FA445040} = {E0635F4C-74B1-4BE3-9E09-4CEEBE2464F3}
+		{4E7223C3-DC5C-46A8-851D-469A169B3049} = {E0635F4C-74B1-4BE3-9E09-4CEEBE2464F3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CAA0062-38CE-42A1-8378-2B866F1A22BD}
+	EndGlobalSection
+EndGlobal

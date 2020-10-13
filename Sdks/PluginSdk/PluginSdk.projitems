@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>3e2357c6-a433-430c-b485-dab8fa445040</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>PluginSdk</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Attributes\PluginAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Information\Author.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Information\AuthorUrl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Information\AuthorUrlType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Information\GitPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Attributes\LanguageAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Information\Plugin.cs" />
+  </ItemGroup>
+</Project>
