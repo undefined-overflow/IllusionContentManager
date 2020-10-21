@@ -21,9 +21,12 @@ namespace Manager.Generators
                 .Select(entry => Activator.CreateInstance(entry) as Game);
 
             CheckGuid(games);
-            //SaveIcons();
 
-            await Task.WhenAll(SaveGamesEntity(games), SaveGamesEntities(games), SaveLangs(games));
+            await Task.WhenAll(SaveGamesEntity(games), SaveGamesEntities(games)
+#if DEBUG
+                , SaveLangs(games)
+#endif
+            );
         }
 
         private static Task SaveGamesEntity(IEnumerable<Game> games)
@@ -82,22 +85,6 @@ namespace Manager.Generators
 
                 return File.WriteAllTextAsync(Path.Join(dst, "games.json"), JsonSerializer.Serialize(entries));
             }));
-
-        //private static void SaveIcons()
-        //{
-        //    string dst = Path.Join(Core.FakeDir, "assets");
-        //    string src = Path.Join(Core.StaticDir, "assets");
-
-        //    foreach (string dirPath in Directory.GetDirectories(src, "*", SearchOption.AllDirectories))
-        //    {
-        //        Directory.CreateDirectory(dirPath.Replace(src, dst));
-        //    }
-
-        //    foreach (string newPath in Directory.GetFiles(src, "*.*", SearchOption.AllDirectories))
-        //    {
-        //        File.Copy(newPath, newPath.Replace(src, dst), true);
-        //    }
-        //}
 
         private static void CheckGuid(IEnumerable<Game> games)
         {

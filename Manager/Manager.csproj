@@ -21,10 +21,6 @@
     <None Remove="assets\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Attributes\" />
-  </ItemGroup>
-
   <Import Project="..\Sdks\PluginSdk\PluginSdk.projitems" Label="Shared" />
 
   <Import Project="..\Sdks\GameSdk\GameSdk.projitems" Label="Shared" />

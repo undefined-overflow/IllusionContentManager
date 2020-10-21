@@ -24,7 +24,11 @@ namespace Manager.Generators
             var plugins = GetPlugins();
             CheckGuid(plugins);
 
-            await Task.WhenAll(SaveGames(plugins), SaveInstallers(plugins), SaveLangs(plugins));
+            await Task.WhenAll(SaveGames(plugins), SaveInstallers(plugins)
+#if DEBUG
+                , SaveLangs(plugins)
+#endif
+            );
         }
 
         private static async Task SaveLangs(IEnumerable<Plugin> plugins)

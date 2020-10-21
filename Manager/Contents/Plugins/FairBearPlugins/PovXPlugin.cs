@@ -5,9 +5,9 @@ using PluginSdk.Attributes;
 using PluginSdk.Information;
 using System;
 
-namespace Manager.Contents.Plugins.FairBearPlugins.Koikatsu
+namespace Manager.Contents.Plugins.FairBearPlugins
 {
-    [Language(LanguageType.English, "PovX", "PoV plugin")]
+    [Language(LanguageType.English, "KK_PovX", "PoV plugin")]
     [Plugin("166243FC-F6A8-4F9D-8121-0E373D6495DB", typeof(BepInExPlugin))]
     public class PovXPlugin : GitPlugin
     {

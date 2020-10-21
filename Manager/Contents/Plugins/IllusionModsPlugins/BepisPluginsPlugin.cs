@@ -5,7 +5,7 @@ using PluginSdk.Attributes;
 using PluginSdk.Information;
 using System;
 
-namespace Manager.Contents.Plugins.IllusionModsPlugins.Koikatsu
+namespace Manager.Contents.Plugins.IllusionModsPlugins
 {
     [Language(LanguageType.English, "BepisPlugins", "A collection of essential BepInEx plugins for Koikatu / Koikatsu Party, EmotionCreators, AI-Shoujo / AI-Girl, HoneySelect2 and other games by Illusion")]
     [Plugin("191BFC5F-EE47-45B7-913A-14637F8534A7", typeof(BepInExPlugin))]
