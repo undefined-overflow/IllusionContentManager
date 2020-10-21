@@ -480,3 +480,5 @@ MigrationBackup/
 .ionide/
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,node
+
+fake-api/wwwroot/api

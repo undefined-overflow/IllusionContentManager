@@ -3,7 +3,7 @@ import express from "express";
 
 const app = express();
 app.use(cors());
-app.use(express.static('../FakeApi/wwwroot'));
+app.use(express.static('wwwroot'));
 
 const port = 3001;
 app.listen(port, function () {
