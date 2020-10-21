@@ -2,7 +2,7 @@
 {
     public class AuthorUrl
     {
-        public AuthorUrlType Type { get; init; }
-        public string Url { get; init; }
+        public AuthorUrlType Type { get; set; }
+        public string Url { get; set; }
     }
 }

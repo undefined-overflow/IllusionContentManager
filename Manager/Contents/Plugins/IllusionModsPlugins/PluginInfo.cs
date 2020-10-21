@@ -9,7 +9,7 @@ namespace Manager.Contents.Plugins.IllusionModsPlugins
             Name = "IllusionMods",
             Urls = new AuthorUrl[]
             {
-                new() { Url = "https://github.com/IllusionMods", Type = AuthorUrlType.Git }
+                new AuthorUrl() { Url = "https://github.com/IllusionMods", Type = AuthorUrlType.Git }
             }
         };
     }

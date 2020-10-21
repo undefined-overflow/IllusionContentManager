@@ -18,17 +18,17 @@ namespace Manager.Contents.Plugins.DeathWeasel1337Plugins.KK_Plugins
 
             Entities = new GitEntityPlugin[]
             {
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"AI_AnimationController\.v.*?\.zip",
                     Games = new Type[] { typeof(AiShoujoGame) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"KK_AnimationController\.v.*?\.zip",
                     Games = new Type[] { typeof(KoikatsuGame) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"HS2_AnimationController\.v.*?\.zip",
                     Games = new Type[] { typeof(HoneySelect2Game) }

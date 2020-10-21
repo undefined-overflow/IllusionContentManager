@@ -77,7 +77,7 @@ namespace Manager.Generators
                         plugin.GetCustomAttribute<GameAttribute>().Guid,
                         Lang = plugin.GetCustomAttributes<LanguageAttribute>().FirstOrDefault(lang => lang.Type == id)
                     })
-                    .Where(p => p.Lang is not null)
+                    .Where(p => !(p.Lang is null))
                     .ToDictionary(key => key.Guid, value => value.Lang.Name);
 
                 var dst = Path.Join(Core.WebDir, @"src\i18n\languages", Enum.GetName(typeof(LanguageType), id).ToLower());
@@ -88,7 +88,7 @@ namespace Manager.Generators
 
         private static void CheckGuid(IEnumerable<Game> games)
         {
-            Dictionary<Guid, Game> @using = new();
+            Dictionary<Guid, Game> @using = new Dictionary<Guid, Game>();
             foreach (var game in games)
             {
                 GameAttribute attribute = game.GetType().GetCustomAttribute<GameAttribute>();

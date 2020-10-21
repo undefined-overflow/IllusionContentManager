@@ -9,7 +9,7 @@ namespace Manager.Contents.Plugins.FairBearPlugins
             Name = "FairBear",
             Urls = new AuthorUrl[]
             {
-                new() { Url = "https://github.com/FairBear", Type = AuthorUrlType.Git }
+                new AuthorUrl() { Url = "https://github.com/FairBear", Type = AuthorUrlType.Git }
             }
         };
     }

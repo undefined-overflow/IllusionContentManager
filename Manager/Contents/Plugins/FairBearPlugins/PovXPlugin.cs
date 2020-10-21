@@ -18,7 +18,7 @@ namespace Manager.Contents.Plugins.FairBearPlugins
             GitRepository = "KK_PovX";
             Entities = new GitEntityPlugin[]
             {
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"KK_PovX\.v.*?\.zip",
                     Games = new Type[] { typeof(KoikatsuGame) }

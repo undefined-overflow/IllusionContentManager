@@ -2,7 +2,7 @@
 {
     public abstract class Plugin
     {
-        public Author Author { get; init; }
-        public bool Obsolete { get; init; }
+        public Author Author { get; set; }
+        public bool Obsolete { get; set; }
     }
 }

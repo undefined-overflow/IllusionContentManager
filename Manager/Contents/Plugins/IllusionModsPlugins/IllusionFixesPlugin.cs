@@ -18,32 +18,32 @@ namespace Manager.Contents.Plugins.IllusionModsPlugins
             GitRepository = "IllusionFixes";
             Entities = new GitEntityPlugin[]
             {
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"IllusionFixes_Koikatsu_.*?\.zip",
                     Games = new Type[] { typeof(KoikatsuGame) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"IllusionFixes_EmotionCreators_.*?\.zip",
                     Games = new Type[] { typeof(EmotionCreatorsGame) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"IllusionFixes_HoneySelect2_.*?\.zip",
                     Games = new Type[] { typeof(HoneySelect2Game) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"IllusionFixes_HoneySelect_.*?\.zip",
                     Games = new Type[] { typeof(HoneySelect1Game) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"IllusionFixes_PlayHome_.*?\.zip",
                     Games = new Type[] { typeof(PlayHomeGame) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"IllusionFixes_AIGirl_.*?\.zip",
                     Games = new Type[] { typeof(AiShoujoGame) }

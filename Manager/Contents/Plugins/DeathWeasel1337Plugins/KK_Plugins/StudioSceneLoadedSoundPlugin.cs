@@ -18,7 +18,7 @@ namespace Manager.Contents.Plugins.DeathWeasel1337Plugins.KK_Plugins
 
             Entities = new GitEntityPlugin[]
             {
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"\.v.*?\.zip",
                     Games = new Type[] { typeof(KoikatsuGame) }

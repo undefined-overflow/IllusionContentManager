@@ -9,7 +9,7 @@ namespace Manager.Contents.Plugins.BepInExPlugins
             Name = "BepInEx",
             Urls = new AuthorUrl[]
             {
-                new() { Url = "https://github.com/BepInEx", Type = AuthorUrlType.Git }
+                new AuthorUrl() { Url = "https://github.com/BepInEx", Type = AuthorUrlType.Git }
             }
         };
     }

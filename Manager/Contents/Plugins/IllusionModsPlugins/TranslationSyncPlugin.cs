@@ -18,7 +18,7 @@ namespace Manager.Contents.Plugins.IllusionModsPlugins
             GitRepository = "TranslationTools";
             Entities = new GitEntityPlugin[]
             {
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"KK_TranslationSync\.v.*?\.zip",
                     Games = new Type[] { typeof(KoikatsuGame) }

@@ -41,7 +41,7 @@ namespace Manager.Generators
                         plugin.GetCustomAttribute<PluginAttribute>().Guid,
                         Lang = plugin.GetCustomAttributes<PluginSdk.Attributes.LanguageAttribute>().FirstOrDefault(lang => lang.Type == id)
                     })
-                    .Where(p => p.Lang is not null)
+                    .Where(p => !(p.Lang is null))
                     .ToDictionary(key => key.Guid, value => new
                     {
                         name = value.Lang.Name,
@@ -185,7 +185,7 @@ namespace Manager.Generators
 
         private static void CheckGuid(IEnumerable<Plugin> plugins)
         {
-            Dictionary<Guid, Plugin> @using = new();
+            Dictionary<Guid, Plugin> @using = new Dictionary<Guid, Plugin>();
             foreach (var plugin in plugins)
             {
                 PluginAttribute attribute = plugin.GetType().GetCustomAttribute<PluginAttribute>();

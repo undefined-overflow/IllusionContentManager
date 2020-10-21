@@ -18,22 +18,22 @@ namespace Manager.Contents.Plugins.IllusionModsPlugins
             GitRepository = "TranslationTools";
             Entities = new GitEntityPlugin[]
             {
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"KK_TextResourceRedirector\.v.*?\.zip",
                     Games = new Type[] { typeof(KoikatsuGame) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"HS_TextResourceRedirector\.v.*?\.zip",
                     Games = new Type[] { typeof(HoneySelect1Game) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"HS2_TextResourceRedirector\.v.*?\.zip",
                     Games = new Type[] { typeof(HoneySelect2Game) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"AI_TextResourceRedirector\.v.*?\.zip",
                     Games = new Type[] { typeof(AiShoujoGame) }

@@ -2,9 +2,9 @@
 
 namespace PluginSdk.Information
 {
-    public class Author
-    {
-        public string Name { get; init; }
-        public IReadOnlyList<AuthorUrl> Urls { get; init; }
-    }
+  public class Author
+  {
+    public string Name { get; set; }
+    public IReadOnlyList<AuthorUrl> Urls { get; set; }
+  }
 }

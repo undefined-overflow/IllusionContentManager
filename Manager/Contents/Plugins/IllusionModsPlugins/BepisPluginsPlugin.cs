@@ -18,7 +18,7 @@ namespace Manager.Contents.Plugins.IllusionModsPlugins
             GitRepository = "BepisPlugins";
             Entities = new GitEntityPlugin[]
             {
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"KK_BepisPlugins_r.*?\.zip",
                     Games = new Type[] { typeof(KoikatsuGame) }

@@ -18,17 +18,17 @@ namespace Manager.Contents.Plugins.IllusionModsPlugins
             GitRepository = "IllusionModdingAPI";
             Entities = new GitEntityPlugin[]
             {
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"KKAPI_.*?\.zip",
                     Games = new Type[] { typeof(KoikatsuGame), typeof(KoikatsuSteamGame) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"HS2API_.*?\.zip",
                     Games = new Type[] { typeof(HoneySelect2Game) }
                 },
-                new()
+                new GitEntityPlugin()
                 {
                     FileMask = @"AIAPI_.*?\.zip",
                     Games = new Type[] { typeof(AiShoujoGame) }

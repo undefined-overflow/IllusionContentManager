@@ -9,7 +9,7 @@ namespace Manager.Contents.Plugins.DeathWeasel1337Plugins
             Name = "DeathWeasel1337",
             Urls = new AuthorUrl[]
             {
-                new() { Url = "https://github.com/DeathWeasel1337", Type = AuthorUrlType.Git }
+                new AuthorUrl() { Url = "https://github.com/DeathWeasel1337", Type = AuthorUrlType.Git }
             }
         };
     }
