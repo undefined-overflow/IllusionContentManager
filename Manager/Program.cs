@@ -1,5 +1,5 @@
 ﻿using Manager.Generators;
-using System.IO;
+using System;
 using System.Threading.Tasks;
 
 namespace Manager
@@ -8,10 +8,9 @@ namespace Manager
     {
         private static async Task Main()
         {
-            var q = Directory.GetCurrentDirectory();
-
-            await PluginGenerator.Save();
-            await GameGenerator.Save();
+            Console.WriteLine("Main start");
+            await Task.WhenAll(PluginGenerator.Save(), GameGenerator.Save());
+            Console.WriteLine("Main done");
         }
     }
 }
