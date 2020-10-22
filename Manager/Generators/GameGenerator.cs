@@ -31,7 +31,7 @@ namespace Manager.Generators
 
         private static Task SaveGamesEntity(IEnumerable<Game> games)
         {
-            Directory.CreateDirectory(Path.GetFullPath(Path.Join(Core.FakeDir, @"api\games\entities")));
+            Directory.CreateDirectory(Path.Join(Core.FakeDir, "api", "games", "entities"));
 
             return Task.WhenAll(games
                 .Select(game =>
@@ -44,7 +44,7 @@ namespace Manager.Generators
                         extensions = game.Extensions,
                     };
 
-                    string dst = Path.GetFullPath(Path.Join(Core.FakeDir, $@"api\games\entities\{attribute.Guid}.json"));
+                    string dst = Path.Join(Core.FakeDir, "api", "games", "entities", $"{attribute.Guid}.json");
                     Console.WriteLine($"[Save games]: {dst}");
 
                     return File.WriteAllTextAsync(dst, JsonSerializer.Serialize(entity));
@@ -64,10 +64,10 @@ namespace Manager.Generators
                 };
             });
 
-            string dst = Path.GetFullPath(Path.Join(Core.FakeDir, @"api\games"));
+            string dst = Path.Join(Core.FakeDir, "api", "games");
             Directory.CreateDirectory(dst);
 
-            return File.WriteAllTextAsync(Path.GetFullPath(Path.Join(dst, "list.json")), JsonSerializer.Serialize(entries));
+            return File.WriteAllTextAsync(Path.Join(dst, "list.json"), JsonSerializer.Serialize(entries));
         }
 
         private static Task SaveLangs(IEnumerable<Game> games) => Task.WhenAll((Enum.GetValues(typeof(LanguageType)) as LanguageType[])
@@ -75,17 +75,17 @@ namespace Manager.Generators
             {
                 var entries = games.Select(game => game.GetType())
                     .Select(plugin => new
-                      {
-                          plugin.GetCustomAttribute<GameAttribute>().Guid,
-                          Lang = plugin.GetCustomAttributes<LanguageAttribute>().FirstOrDefault(lang => lang.Type == id)
-                      })
+                    {
+                        plugin.GetCustomAttribute<GameAttribute>().Guid,
+                        Lang = plugin.GetCustomAttributes<LanguageAttribute>().FirstOrDefault(lang => lang.Type == id)
+                    })
                     .Where(p => !(p.Lang is null))
                     .ToDictionary(key => key.Guid, value => value.Lang.Name);
 
-                var dst = Path.GetFullPath(Path.Join(Core.WebDir, @"src\i18n\languages", Enum.GetName(typeof(LanguageType), id).ToLower()));
+                var dst = Path.Join(Core.WebDir, "src", "i18n", "languages", Enum.GetName(typeof(LanguageType), id).ToLower());
                 Directory.CreateDirectory(dst);
 
-                return File.WriteAllTextAsync(Path.GetFullPath(Path.Join(dst, "games.json")), JsonSerializer.Serialize(entries));
+                return File.WriteAllTextAsync(Path.Join(dst, "games.json"), JsonSerializer.Serialize(entries));
             }));
 
         private static void CheckGuid(IEnumerable<Game> games)
