@@ -45,6 +45,8 @@ namespace Manager.Generators
                     };
 
                     string dst = Path.Join(Core.FakeDir, $@"api\games\entities\{attribute.Guid}.json");
+                    Console.WriteLine($"[Save games]: {dst}");
+
                     return File.WriteAllTextAsync(dst, JsonSerializer.Serialize(entity));
                 }));
         }

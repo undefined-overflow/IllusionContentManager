@@ -9,7 +9,9 @@ namespace Manager
         private static async Task Main()
         {
             Console.WriteLine("Main start");
+
             await Task.WhenAll(PluginGenerator.Save(), GameGenerator.Save());
+
             Console.WriteLine("Main done");
         }
     }
