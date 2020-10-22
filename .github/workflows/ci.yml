@@ -28,13 +28,9 @@ jobs:
 
       # Publish the website
       - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@v3.6.1
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
           publish_dir: ./fake-api/wwwroot
-          allow_empty_commit: false
-          keep_files: false
-          force_orphan: true
           # TODO uncomment the following line if you have a custom domain name
           # cname: demo.meziantou.net
