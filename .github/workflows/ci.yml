@@ -26,25 +26,15 @@ jobs:
       - name: Generator
         run: dotnet run --project Manager --configuration Release
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: fake-api/wwwroot # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
-
-
       # Publish the website
-      # - name: GitHub Pages action
-      #   if: ${{ github.ref == 'refs/heads/master' }} # Publish only when the push is on master
-      #   uses: peaceiris/actions-gh-pages@v3.6.1
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_branch: gh-pages
-      #     publish_dir: fake-api/wwwroot
-      #     allow_empty_commit: false
-      #     keep_files: false
-      #     force_orphan: true
-      #     # TODO uncomment the following line if you have a custom domain name
-      #     # cname: demo.meziantou.net
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./fake-api/wwwroot
+          allow_empty_commit: false
+          keep_files: false
+          force_orphan: true
+          # TODO uncomment the following line if you have a custom domain name
+          # cname: demo.meziantou.net
