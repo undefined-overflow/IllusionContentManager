@@ -48,13 +48,13 @@ namespace Manager.Generators
                         description = value.Lang.Description
                     });
 
-                await File.WriteAllTextAsync(Path.Join(@"..\illusion-package-manager\src\i18n\languages", Enum.GetName(typeof(LanguageType), id).ToLower(), "plugins.json"), JsonSerializer.Serialize(entries));
+                await File.WriteAllTextAsync(Path.GetFullPath(Path.Join(@"..\illusion-package-manager\src\i18n\languages", Enum.GetName(typeof(LanguageType), id).ToLower(), "plugins.json")), JsonSerializer.Serialize(entries));
             }
         }
 
         private static async Task SaveGames(IEnumerable<Plugin> plugins)
         {
-            var dst = Path.Join(Core.FakeDir, @"api\plugins\games");
+            var dst = Path.GetFullPath(Path.Join(Core.FakeDir, @"api\plugins\games"));
             Directory.CreateDirectory(dst);
 
             var games = AppDomain.CurrentDomain.GetAssemblies()
@@ -98,19 +98,19 @@ namespace Manager.Generators
 
             foreach (var (guid, entities) in games)
             {
-                await File.WriteAllTextAsync(Path.Join(dst, $"{guid}.json"), JsonSerializer.Serialize(entities));
+                await File.WriteAllTextAsync(Path.GetFullPath(Path.Join(dst, $"{guid}.json")), JsonSerializer.Serialize(entities));
             }
         }
 
         private static async Task SaveInstallers(IEnumerable<Plugin> plugins)
         {
-            string installersDir = Path.Join(Core.FakeDir, @"api\plugins\installers");
+            string installersDir = Path.GetFullPath(Path.Join(Core.FakeDir, @"api\plugins\installers"));
             Directory.CreateDirectory(installersDir);
 
-            string infosDir = Path.Join(installersDir, "infos");
+            string infosDir = Path.GetFullPath(Path.Join(installersDir, "infos"));
             Directory.CreateDirectory(infosDir);
 
-            string entitiesDir = Path.Join(installersDir, "entities");
+            string entitiesDir = Path.GetFullPath(Path.Join(installersDir, "entities"));
             Directory.CreateDirectory(entitiesDir);
 
             var games = AppDomain.CurrentDomain.GetAssemblies()
@@ -120,14 +120,14 @@ namespace Manager.Generators
 
             foreach (var guid in games)
             {
-                Directory.CreateDirectory(Path.Join(entitiesDir, $"{guid}"));
+                Directory.CreateDirectory(Path.GetFullPath(Path.Join(entitiesDir, $"{guid}")));
             }
 
             foreach (Plugin plugin in plugins)
             {
                 PluginAttribute attribute = plugin.GetType().GetCustomAttribute<PluginAttribute>();
 
-                string infosPath = Path.Join(infosDir, $"{attribute.Guid}.json");
+                string infosPath = Path.GetFullPath(Path.Join(infosDir, $"{attribute.Guid}.json"));
 
                 var dependencies = attribute.Dependencies.Select(t => t.GetCustomAttribute<PluginAttribute>().Guid);
 
@@ -137,7 +137,7 @@ namespace Manager.Generators
                     {
                         GameAttribute game = type.GetCustomAttribute<GameAttribute>();
 
-                        string entityPath = Path.Join(entitiesDir, $"{game.Guid}", $"{attribute.Guid}.json");
+                        string entityPath = Path.GetFullPath(Path.Join(entitiesDir, $"{game.Guid}", $"{attribute.Guid}.json"));
                         await File.WriteAllTextAsync(entityPath, JsonSerializer.Serialize(new
                         {
                             sharedGit.GitUser,
@@ -160,7 +160,7 @@ namespace Manager.Generators
                         {
                             GameAttribute game = type.GetCustomAttribute<GameAttribute>();
 
-                            string entityPath = Path.Join(entitiesDir, $"{game.Guid}", $"{attribute.Guid}.json");
+                            string entityPath = Path.GetFullPath(Path.Join(entitiesDir, $"{game.Guid}", $"{attribute.Guid}.json"));
                             await File.WriteAllTextAsync(entityPath, JsonSerializer.Serialize(new
                             {
                                 git.GitUser,
