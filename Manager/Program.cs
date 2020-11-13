@@ -10,7 +10,8 @@ namespace Manager
         {
             Console.WriteLine("Main start");
 
-            await Task.WhenAll(PluginGenerator.Save(), GameGenerator.Save());
+            await PluginGenerator.Save();
+            await GameGenerator.Save();
 
             Console.WriteLine("Main done");
         }

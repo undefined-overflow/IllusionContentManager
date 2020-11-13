@@ -24,11 +24,11 @@ namespace Manager.Generators
             var plugins = GetPlugins();
             CheckGuid(plugins);
 
-            await Task.WhenAll(SaveGames(plugins), SaveInstallers(plugins)
+            await SaveGames(plugins);
+            await SaveInstallers(plugins);
 #if DEBUG
-                , SaveLangs(plugins)
+            await SaveLangs(plugins);
 #endif
-            );
         }
 
         private static async Task SaveLangs(IEnumerable<Plugin> plugins)
@@ -148,7 +148,7 @@ namespace Manager.Generators
 
                     await File.WriteAllTextAsync(infosPath, JsonSerializer.Serialize(new
                     {
-                        Type = PluginType.Git,
+                        type = PluginType.Git,
                         dependencies,
                     }));
                 }
