@@ -21,6 +21,10 @@
     <None Remove="assets\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
+  </ItemGroup>
+
   <Import Project="..\Sdks\PluginSdk\PluginSdk.projitems" Label="Shared" />
 
   <Import Project="..\Sdks\GameSdk\GameSdk.projitems" Label="Shared" />
