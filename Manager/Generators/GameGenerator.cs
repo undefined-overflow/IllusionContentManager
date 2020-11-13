@@ -29,28 +29,6 @@ namespace Manager.Generators
             );
         }
 
-        private static Task SaveGamesEntity(IEnumerable<Game> games)
-        {
-            Directory.CreateDirectory(Path.Join(Core.FakeDir, "api", "games", "entities"));
-
-            return Task.WhenAll(games
-                .Select(game =>
-                {
-                    var attribute = game.GetType().GetCustomAttribute<GameAttribute>();
-
-                    var entity = new
-                    {
-                        guid = attribute.Guid,
-                        extensions = game.Extensions,
-                    };
-
-                    string dst = Path.Join(Core.FakeDir, "api", "games", "entities", $"{attribute.Guid}.json");
-                    Console.WriteLine($"[Save games]: {dst}");
-
-                    return File.WriteAllTextAsync(dst, JsonSerializer.Serialize(entity));
-                }));
-        }
-
         private static Task SaveGamesEntities(IEnumerable<Game> games)
         {
             var entries = games.Select(game =>
@@ -66,10 +44,10 @@ namespace Manager.Generators
                 };
             });
 
-            string dst = Path.Join(Core.FakeDir, "api", "games");
+            string dst = Path.Join(Core.FakeDir, "api");
             Directory.CreateDirectory(dst);
 
-            return File.WriteAllTextAsync(Path.Join(dst, "list.json"), JsonSerializer.Serialize(entries));
+            return File.WriteAllTextAsync(Path.Join(dst, "games.json"), JsonSerializer.Serialize(entries));
         }
 
         private static Task SaveLangs(IEnumerable<Game> games) => Task.WhenAll((Enum.GetValues(typeof(LanguageType)) as LanguageType[])

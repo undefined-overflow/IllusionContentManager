@@ -140,16 +140,16 @@ namespace Manager.Generators
                         string entityPath = Path.Join(entitiesDir, $"{game.Guid}", $"{attribute.Guid}.json");
                         await File.WriteAllTextAsync(entityPath, JsonSerializer.Serialize(new
                         {
-                            sharedGit.GitUser,
-                            sharedGit.GitRepository,
-                            sharedGit.FileMask
+                            gitUser = sharedGit.GitUser,
+                            gitRepository = sharedGit.GitRepository,
+                            fileMask = sharedGit.FileMask
                         }));
                     }
 
                     await File.WriteAllTextAsync(infosPath, JsonSerializer.Serialize(new
                     {
                         Type = PluginType.Git,
-                        Dependencies = dependencies,
+                        dependencies,
                     }));
                 }
                 else if (plugin is GitPlugin git)
@@ -163,17 +163,17 @@ namespace Manager.Generators
                             string entityPath = Path.Join(entitiesDir, $"{game.Guid}", $"{attribute.Guid}.json");
                             await File.WriteAllTextAsync(entityPath, JsonSerializer.Serialize(new
                             {
-                                git.GitUser,
-                                git.GitRepository,
-                                entity.FileMask
+                                gitUser = git.GitUser,
+                                gitRepository = git.GitRepository,
+                                fileMask = entity.FileMask
                             }));
                         }
                     }
 
                     await File.WriteAllTextAsync(infosPath, JsonSerializer.Serialize(new
                     {
-                        Type = PluginType.Git,
-                        Dependencies = dependencies,
+                        type = PluginType.Git,
+                        dependencies,
                     }));
                 }
                 else
