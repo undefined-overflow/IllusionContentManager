@@ -16,7 +16,7 @@ namespace Manager.Contents.Plugins.BepInExPlugins.BepInEx.Debug
             GitUser = "BepInEx";
             GitRepository = "BepInEx.Debug";
             FileMask = @"StartupProfiler_v.*?\.zip";
-            Games = new Type[] { typeof(KoikatsuGame) };
+            Games = new Type[] { typeof(KoikatuGame) };
         }
     }
 }

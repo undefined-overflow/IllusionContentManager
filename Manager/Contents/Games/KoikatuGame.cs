@@ -5,14 +5,14 @@ using Manager.Assets.Games;
 
 namespace Manager.Contents.Games
 {
-    [Language(LanguageType.English, "Koikatsu (steam)")]
-    [Game("C9392167-A87A-44FE-87DF-8173A57645D7")]
-    public class KoikatsuSteamGame : Game
+    [Language(LanguageType.English, "Koikatu")]
+    [Game("DD577C14-B0F5-47B1-ADAE-7000E047C4DA")]
+    public class KoikatuGame : Game
     {
-        public KoikatsuSteamGame()
+        public KoikatuGame()
         {
             Icon = IconInfo.Koikatsu;
-            Exe = "Koikatsu";
+            Exe = "Koikatu";
             Extensions = GameExtensions.Cards | GameExtensions.Plugins;
         }
     }

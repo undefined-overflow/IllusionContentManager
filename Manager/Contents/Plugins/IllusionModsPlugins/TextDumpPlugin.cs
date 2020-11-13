@@ -21,12 +21,12 @@ namespace Manager.Contents.Plugins.IllusionModsPlugins
                 new GitEntityPlugin()
                 {
                     FileMask = @"KK_TextDump\.v.*?\.zip",
-                    Games = new Type[] { typeof(KoikatsuGame) }
+                    Games = new Type[] { typeof(KoikatuGame) }
                 },
                 new GitEntityPlugin()
                 {
                     FileMask = @"KKP_TextDump\.v.*?\.zip",
-                    Games = new Type[] { typeof(KoikatsuSteamGame) }
+                    Games = new Type[] { typeof(KoikatuSteamGame) }
                 },
                 new GitEntityPlugin()
                 {

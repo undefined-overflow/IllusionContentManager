@@ -16,7 +16,7 @@ namespace Manager.Contents.Plugins.BepInExPlugins
             GitUser = "BepInEx";
             GitRepository = "IPALoaderX";
             FileMask = @"BepInEx\.IPALoader\.v.*?\.zip";
-            Games = new Type[] { typeof(KoikatsuGame) };
+            Games = new Type[] { typeof(KoikatuGame) };
         }
     }
 }

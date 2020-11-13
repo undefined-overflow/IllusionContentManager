@@ -26,7 +26,7 @@ namespace Manager.Contents.Plugins.DeathWeasel1337Plugins.KK_Plugins
                 new GitEntityPlugin()
                 {
                     FileMask = @"KK_AnimationOverdrive\.v.*?\.zip",
-                    Games = new Type[] { typeof(KoikatsuGame) }
+                    Games = new Type[] { typeof(KoikatuGame) }
                 },
                 new GitEntityPlugin()
                 {

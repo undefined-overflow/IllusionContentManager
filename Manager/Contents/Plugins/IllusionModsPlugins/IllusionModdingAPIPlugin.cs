@@ -21,7 +21,7 @@ namespace Manager.Contents.Plugins.IllusionModsPlugins
                 new GitEntityPlugin()
                 {
                     FileMask = @"KKAPI_.*?\.zip",
-                    Games = new Type[] { typeof(KoikatsuGame), typeof(KoikatsuSteamGame) }
+                    Games = new Type[] { typeof(KoikatuGame), typeof(KoikatuSteamGame) }
                 },
                 new GitEntityPlugin()
                 {

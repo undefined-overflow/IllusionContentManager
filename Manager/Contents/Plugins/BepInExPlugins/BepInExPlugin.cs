@@ -16,7 +16,7 @@ namespace Manager.Contents.Plugins.BepInExPlugins
             GitUser = "BepInEx";
             GitRepository = "BepInEx";
             FileMask = @"BepInEx_x64_.*?\.zip";
-            Games = new Type[] { typeof(KoikatsuGame), typeof(KoikatsuSteamGame) };
+            Games = new Type[] { typeof(KoikatuGame), typeof(KoikatuSteamGame) };
         }
     }
 }

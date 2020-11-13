@@ -21,7 +21,7 @@ namespace Manager.Contents.Plugins.IllusionModsPlugins
                 new GitEntityPlugin()
                 {
                     FileMask = @"KK_TranslationSync\.v.*?\.zip",
-                    Games = new Type[] { typeof(KoikatsuGame) }
+                    Games = new Type[] { typeof(KoikatuGame) }
                 },
             };
         }

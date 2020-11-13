@@ -16,7 +16,7 @@ namespace Manager.Contents.Plugins.BepInExPlugins.BepInEx.Utility
             GitUser = "BepInEx";
             GitRepository = "BepInEx.Utility";
             FileMask = @"BepInEx\.EnableFullScreenToggle\.v.*?\.zip";
-            Games = new Type[] { typeof(KoikatsuGame) };
+            Games = new Type[] { typeof(KoikatuGame) };
         }
     }
 }
