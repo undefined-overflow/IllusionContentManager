@@ -22,7 +22,7 @@ namespace Manager.Generators
 
             CheckGuid(games);
 
-            await Task.WhenAll(SaveGamesEntity(games), SaveGamesEntities(games)
+            await Task.WhenAll(SaveGamesEntities(games)
 #if DEBUG
                 , SaveLangs(games)
 #endif
