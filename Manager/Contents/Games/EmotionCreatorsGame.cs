@@ -12,6 +12,7 @@ namespace Manager.Contents.Games
         public EmotionCreatorsGame()
         {
             Icon = IconInfo.EmotionCreators;
+            Exe = "EmotionCreators";
             Extensions = GameExtensions.Cards | GameExtensions.Plugins;
         }
     }

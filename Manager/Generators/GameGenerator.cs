@@ -61,6 +61,8 @@ namespace Manager.Generators
                 {
                     guid = attribute.Guid,
                     icon = game.Icon,
+                    exe = game.Exe,
+                    extensions = game.Extensions,
                 };
             });
 

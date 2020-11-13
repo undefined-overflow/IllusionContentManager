@@ -12,6 +12,7 @@ namespace Manager.Contents.Games
         public HoneySelect1Game()
         {
             Icon = IconInfo.HoneySelect1;
+            Exe = "HoneySelect";
             Extensions = GameExtensions.Cards | GameExtensions.Plugins;
         }
     }

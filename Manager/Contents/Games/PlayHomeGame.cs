@@ -12,6 +12,7 @@ namespace Manager.Contents.Games
         public PlayHomeGame()
         {
             Icon = IconInfo.PlayHome;
+            Exe = "PlayHome";
             Extensions = GameExtensions.Cards | GameExtensions.Plugins;
         }
     }

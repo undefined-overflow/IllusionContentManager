@@ -12,6 +12,7 @@ namespace Manager.Contents.Games
         public AiShoujoGame()
         {
             Icon = IconInfo.AiShoujoGame;
+            Exe = "AiShoujo";
             Extensions = GameExtensions.Cards | GameExtensions.Plugins;
         }
     }

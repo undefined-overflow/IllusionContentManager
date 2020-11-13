@@ -12,6 +12,7 @@ namespace Manager.Contents.Games
         public KoikatsuGame()
         {
             Icon = IconInfo.Koikatsu;
+            Exe = "Koikatsu";
             Extensions = GameExtensions.Cards | GameExtensions.Plugins;
         }
     }
